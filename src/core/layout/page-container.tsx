@@ -15,9 +15,6 @@ export const PageContainer: React.FC<IOwnProps> = ({ className }) => {
           <Link to={Paths.HOME}>Home</Link>
         </li>
         <li>
-          <Link to={Paths.SIGN_IN}>Sign in</Link>
-        </li>
-        <li>
           <Link to={generatePath(Paths.CAMPAIGNS.HOME, { type: 'email ' })}>Email Campaign</Link>
         </li>
         <li>

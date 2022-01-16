@@ -3,10 +3,10 @@ import t from '../../../modules/i18n';
 
 export const SigninSchema = object({
   rememberMe: boolean().optional(),
-  email: string().required(t('Insert an email')).email(t('Insert a valid email')),
+  email: string().required(t('Ingresa tu correo')).email(t('Ingresa un correo válido')),
   password: string()
-    .required(t('Insert a password'))
-    .min(6, t('Your password must have at least |min| characters', { min: 6 })),
+    .required(t('Ingresa tu contraseña'))
+    .min(6, t('Tu contraseña debe tener mínimo 6 caracteres', { min: 6 })),
 });
 
 export type SigninForm = InferType<typeof SigninSchema>;

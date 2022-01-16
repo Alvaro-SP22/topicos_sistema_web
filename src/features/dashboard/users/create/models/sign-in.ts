@@ -1,5 +1,5 @@
 import { boolean, InferType, object, string } from 'yup';
-import t from '../../../modules/i18n';
+import t from '../../../../../core/modules/i18n';
 
 export const SigninSchema = object({
   rememberMe: boolean().optional(),
