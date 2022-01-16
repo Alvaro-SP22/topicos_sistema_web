@@ -1,0 +1,7 @@
+.headerWrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+    padding: 2% 2% 1%;
+}

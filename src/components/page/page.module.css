@@ -1,0 +1,7 @@
+.sidebarWrapper{
+    height: 100vh;
+    display: flex;
+}
+.bodyWrapper{
+    width: 100%;
+}
