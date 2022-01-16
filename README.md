@@ -1,33 +1,27 @@
-# React Rtk Starter
+# Proyecto - Curso Tópicos 3
+Profesor: Anthony Gómez
+## Instalación
 
-This project is an starter project with a production ready setup with a feature folder structure. It has the power of rtk, rtk query and observables. I addition it was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
-
-
-## Installation
-
-Install the dependencies and devDependencies and start the server.
+Instalación de las dependencias
 
 ```sh
 yarn install
 ```
 
-## Available Scripts
+## Scripts Disponibles
 
 In the project directory, you can run:
+En el directorio de este proyecto, puedes ejecutar:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Corre la App en modo desarrollo<br />
+Abre [http://localhost:3000](http://localhost:3000) para ver el proyecto en tu navegador.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+La página se volverá a cargar si realiza modificaciones.<br />
+También podrá ver los errores en la consola
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
+## Others Available Script
 ### `yarn run build`
 
 Builds the app for production to the `build` folder.<br />
