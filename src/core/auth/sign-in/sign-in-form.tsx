@@ -12,6 +12,8 @@ import { Controller, FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { SigninForm, SigninSchema } from './models/sign-in';
 import styles from './sign-in.module.css';
+import { useNavigate } from 'react-router-dom';
+import { Paths } from '../../../constants/route-paths';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface IOwnProps {}
@@ -20,8 +22,8 @@ const SignInForm: React.FC<IOwnProps> = () => {
   const methods = useForm<SigninForm>({
     resolver: yupResolver(SigninSchema),
     defaultValues: {
-      email: '',
-      password: '',
+      email: 'admin@calzados.com',
+      password: '12345678',
       rememberMe: false,
     },
   });
@@ -30,10 +32,11 @@ const SignInForm: React.FC<IOwnProps> = () => {
     handleSubmit: submitWrapper,
     formState: { errors },
   } = methods;
-
+  const navigate = useNavigate();
   const handleSubmit = React.useCallback((data) => {
-    // TODO: submit data
-    console.log('handleSubmit', data);
+    console.log('Data form : ', data);
+    navigate(Paths.DASHBOARD.HOME);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
