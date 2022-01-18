@@ -89,9 +89,9 @@ function DashboardNavbar({ absolute, light, isMini }) {
       onClose={handleCloseMenu}
       sx={{ mt: 2 }}
     >
-      <NotificationItem icon={<Icon>email</Icon>} title="Check new messages" />
-      <NotificationItem icon={<Icon>podcasts</Icon>} title="Manage Podcast sessions" />
-      <NotificationItem icon={<Icon>shopping_cart</Icon>} title="Payment successfully completed" />
+      <NotificationItem icon={<Icon>email</Icon>} title="Revisar mensajes nuevos" />
+      <NotificationItem icon={<Icon>podcasts</Icon>} title="Administrar sesiones de podcast" />
+      <NotificationItem icon={<Icon>shopping_cart</Icon>} title="Pago completado con éxito" />
     </Menu>
   );
 
@@ -115,41 +115,31 @@ function DashboardNavbar({ absolute, light, isMini }) {
       sx={(theme) => navbar(theme, { transparentNavbar, absolute, light, darkMode })}
     >
       <Toolbar sx={(theme) => navbarContainer(theme)}>
-        
         <MDBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
-          
           <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
-
         </MDBox>
-
-
         {isMini ? null : (
           <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
             <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                sx={navbarMobileMenu}
-                onClick={handleMiniSidenav}
-              >
-                <Icon sx={iconsStyle} fontSize="medium">
-                  {miniSidenav ? "menu_open" : "menu"}
-                </Icon>
-              </IconButton>
-            
+              size="small"
+              disableRipple
+              color="inherit"
+              sx={navbarMobileMenu}
+              onClick={handleMiniSidenav}
+            >
+              <Icon sx={iconsStyle} fontSize="medium">
+                {miniSidenav ? "menu_open" : "menu"}
+              </Icon>
+            </IconButton>
             <MDBox pr={1}>
-              <MDInput label="Search here" />
+              <MDInput label="Buscar..." />
             </MDBox>
             <MDBox color={light ? "white" : "inherit"}>
-
               <Link to="/authentication/sign-in/basic">
                 <IconButton sx={navbarIconButton} size="small" disableRipple>
                   <Icon sx={iconsStyle}>account_circle</Icon>
                 </IconButton>
               </Link>
-
-              
-              
               <IconButton
                 size="small"
                 disableRipple
