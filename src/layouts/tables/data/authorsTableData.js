@@ -41,11 +41,11 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "author", accessor: "author", width: "45%", align: "left" },
-      { Header: "function", accessor: "function", align: "left" },
+      { Header: "Codigo", accessor: "author", width: "45%", align: "left" },
+      { Header: "Stock", accessor: "function", align: "left" },
       { Header: "status", accessor: "status", align: "center" },
-      { Header: "employed", accessor: "employed", align: "center" },
-      { Header: "action", accessor: "action", align: "center" },
+      { Header: "Ingreso", accessor: "employed", align: "center" },
+      { Header: "Accion", accessor: "action", align: "center" },
     ],
 
     rows: [
