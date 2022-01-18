@@ -68,7 +68,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "RTL",
+    name: "Prueba",
     key: "rtl",
     icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
     route: "/rtl",
