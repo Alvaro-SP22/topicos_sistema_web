@@ -9,18 +9,20 @@ import MDAvatar from "components/MDAvatar";
 import MDProgress from "components/MDProgress";
 
 // Images
-import logoXD from "assets/images/small-logos/logo-xd.svg";
-import logoAtlassian from "assets/images/small-logos/logo-atlassian.svg";
-import logoSlack from "assets/images/small-logos/logo-slack.svg";
-import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
-import logoJira from "assets/images/small-logos/logo-jira.svg";
-import logoInvesion from "assets/images/small-logos/logo-invision.svg";
-import team1 from "assets/images/team-1.jpg";
-import team2 from "assets/images/team-2.jpg";
-import team3 from "assets/images/team-3.jpg";
-import team4 from "assets/images/team-4.jpg";
+// import logoXD from "assets/images/small-logos/logo-xd.svg";
+// import logoAtlassian from "assets/images/small-logos/logo-atlassian.svg";
+// import logoSlack from "assets/images/small-logos/logo-slack.svg";
+// import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
+// import logoJira from "assets/images/small-logos/logo-jira.svg";
+// import logoInvesion from "assets/images/small-logos/logo-invision.svg";
+import bl001 from "assets/images/BL001.jpeg";
+import bl0011 from "assets/images/BL001_1.jpeg";
+import bl0012 from "assets/images/BL001_2.jpg";
+import bc001 from "assets/images/BC001.jpeg";
+import bc002 from "assets/images/BC002.jpeg";
 
 export default function data() {
+  // eslint-disable-next-line no-unused-vars
   const avatars = (members) =>
     members.map(([image, name]) => (
       <Tooltip key={name} title={name} placeholder="bottom">
@@ -57,28 +59,18 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "companies", accessor: "companies", width: "45%", align: "left" },
-      { Header: "members", accessor: "members", width: "10%", align: "left" },
-      { Header: "budget", accessor: "budget", align: "center" },
-      { Header: "completion", accessor: "completion", align: "center" },
+      { Header: "Producto", accessor: "companies", width: "45%", align: "left" },
+      { Header: "Stock", accessor: "stock", width: "10%", align: "center" },
+      { Header: "Próximo ingreso", accessor: "budget", align: "center" },
     ],
 
     rows: [
       {
-        companies: <Company image={logoXD} name="Material UI XD Version" />,
-        members: (
-          <MDBox display="flex" py={1}>
-            {avatars([
-              [team1, "Ryan Tompson"],
-              [team2, "Romina Hadid"],
-              [team3, "Alexander Smith"],
-              [team4, "Jessica Doe"],
-            ])}
-          </MDBox>
-        ),
+        companies: <Company image={bl001} name="Bota Larga(Ranger)" />,
+        stock: <>3</>,
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $14,000
+            10/02/2022
           </MDTypography>
         ),
         completion: (
@@ -88,18 +80,11 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoAtlassian} name="Add Progress Track" />,
-        members: (
-          <MDBox display="flex" py={1}>
-            {avatars([
-              [team2, "Romina Hadid"],
-              [team4, "Jessica Doe"],
-            ])}
-          </MDBox>
-        ),
+        companies: <Company image={bl0011} name="Bota Larga(Negro)" />,
+        stock: <>1</>,
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $3,000
+            01/02/2022
           </MDTypography>
         ),
         completion: (
@@ -109,18 +94,11 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoSlack} name="Fix Platform Errors" />,
-        members: (
-          <MDBox display="flex" py={1}>
-            {avatars([
-              [team1, "Ryan Tompson"],
-              [team3, "Alexander Smith"],
-            ])}
-          </MDBox>
-        ),
+        companies: <Company image={bl0012} name="Bota Larga(Vino)s" />,
+        stock: <>10</>,
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            Not set
+            No programado
           </MDTypography>
         ),
         completion: (
@@ -130,20 +108,11 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoSpotify} name="Launch our Mobile App" />,
-        members: (
-          <MDBox display="flex" py={1}>
-            {avatars([
-              [team4, "Jessica Doe"],
-              [team3, "Alexander Smith"],
-              [team2, "Romina Hadid"],
-              [team1, "Ryan Tompson"],
-            ])}
-          </MDBox>
-        ),
+        companies: <Company image={bc001} name="Botin Pasador" />,
+        stock: <>8</>,
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $20,500
+            31/01/2022
           </MDTypography>
         ),
         completion: (
@@ -153,41 +122,16 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoJira} name="Add the New Pricing Page" />,
-        members: (
-          <MDBox display="flex" py={1}>
-            {avatars([[team4, "Jessica Doe"]])}
-          </MDBox>
-        ),
+        companies: <Company image={bc002} name="Botin Hebilla" />,
+        stock: <>9</>,
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $500
+            No programado
           </MDTypography>
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
             <MDProgress value={25} color="info" variant="gradient" label={false} />
-          </MDBox>
-        ),
-      },
-      {
-        companies: <Company image={logoInvesion} name="Redesign New Online Shop" />,
-        members: (
-          <MDBox display="flex" py={1}>
-            {avatars([
-              [team1, "Ryan Tompson"],
-              [team4, "Jessica Doe"],
-            ])}
-          </MDBox>
-        ),
-        budget: (
-          <MDTypography variant="caption" color="text" fontWeight="medium">
-            $2,000
-          </MDTypography>
-        ),
-        completion: (
-          <MDBox width="8rem" textAlign="left">
-            <MDProgress value={40} color="info" variant="gradient" label={false} />
           </MDBox>
         ),
       },

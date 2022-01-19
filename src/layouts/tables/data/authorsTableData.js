@@ -15,7 +15,7 @@ import MDBadge from "components/MDBadge";
 // import logoInvesion from "assets/images/small-logos/logo-invision.svg";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
-import team4 from "assets/images/team-4.jpg";
+// import team4 from "assets/images/team-4.jpg";
 
 export default function data() {
   const Author = ({ image, name, email }) => (
@@ -33,17 +33,17 @@ export default function data() {
   return {
     columns: [
       { Header: "Codigo", accessor: "author", width: "45%", align: "left" },
-      { Header: "Estado", accessor: "estado", align: "center" },
+      // { Header: "Estado", accessor: "estado", align: "center" },
       { Header: "Ingreso", accessor: "employed", align: "center" },
       { Header: "Accion", accessor: "action", align: "center" },
     ],
 
     rows: [
       {
-        author: <Author image={team2} name="Chico Azavache" email="chico@creative-tim.com" />,
+        author: <Author image={team2} name="Chico Azabache" email="achico@unitru.edu.pe" />,
         estado: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" />
+            <MDBadge badgeContent="Califica" color="success" variant="gradient" size="sm" />
           </MDBox>
         ),
         employed: (
@@ -58,87 +58,15 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team3} name="Carla Zapata" email="Carla@creative-tim.com" />,
+        author: <Author image={team3} name="Carla Zapata" email="czapata@unitru.edu.pe" />,
         estado: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
+            <MDBadge badgeContent="Moroso" color="dark" variant="gradient" size="sm" />
           </MDBox>
         ),
         employed: (
           <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
             11/01/19
-          </MDTypography>
-        ),
-        action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
-        ),
-      },
-      {
-        author: <Author image={team4} name="Laurent Perrier" email="laurent@creative-tim.com" />,
-        estado: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            19/09/17
-          </MDTypography>
-        ),
-        action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
-        ),
-      },
-      {
-        author: <Author image={team3} name="Michael Levi" email="michael@creative-tim.com" />,
-        estado: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            24/12/08
-          </MDTypography>
-        ),
-        action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
-        ),
-      },
-      {
-        author: <Author image={team3} name="Richard Gran" email="richard@creative-tim.com" />,
-        estado: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            04/10/21
-          </MDTypography>
-        ),
-        action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
-        ),
-      },
-      {
-        author: <Author image={team4} name="Miriam Eric" email="miriam@creative-tim.com" />,
-        estado: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            14/09/20
           </MDTypography>
         ),
         action: (

@@ -7,14 +7,14 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 React example components
-import TimelineItem from "examples/Timeline/TimelineItem";
+// import TimelineItem from "examples/Timeline/TimelineItem";
 
 function OrdersOverview() {
   return (
     <Card sx={{ height: "100%" }}>
       <MDBox pt={3} px={3}>
         <MDTypography variant="h6" fontWeight="medium">
-          Orders overview
+          Ventas
         </MDTypography>
         <MDBox mt={0} mb={2}>
           <MDTypography variant="button" color="text" fontWeight="regular">
@@ -23,14 +23,14 @@ function OrdersOverview() {
             </MDTypography>
             &nbsp;
             <MDTypography variant="button" color="text" fontWeight="medium">
-              24%
+              +1%
             </MDTypography>{" "}
-            this month
+            más que ayer
           </MDTypography>
         </MDBox>
       </MDBox>
       <MDBox p={2}>
-        <TimelineItem
+        {/* <TimelineItem
           color="success"
           icon="notifications"
           title="$2400, Design changes"
@@ -60,7 +60,7 @@ function OrdersOverview() {
           title="New card added for order #4395133"
           dateTime="18 DEC 4:54 AM"
           lastItem
-        />
+        /> */}
       </MDBox>
     </Card>
   );

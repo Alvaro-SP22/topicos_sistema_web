@@ -14,7 +14,7 @@ import MDTypography from "components/MDTypography";
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
+// import Footer from "examples/Footer";
 import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
 import ProfilesList from "examples/Lists/ProfilesList";
 import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
@@ -60,17 +60,17 @@ function Overview() {
                 }}
                 social={[
                   {
-                    link: "https://www.facebook.com/CreativeTim/",
+                    link: "https://www.facebook.com/AA/",
                     icon: <FacebookIcon />,
                     color: "facebook",
                   },
                   {
-                    link: "https://twitter.com/creativetim",
+                    link: "https://twitter.com/AA",
                     icon: <TwitterIcon />,
                     color: "twitter",
                   },
                   {
-                    link: "https://www.instagram.com/creativetimofficial/",
+                    link: "https://www.instagram.com/AA/",
                     icon: <InstagramIcon />,
                     color: "instagram",
                   },
@@ -180,7 +180,7 @@ function Overview() {
           </Grid>
         </MDBox>
       </Header>
-      <Footer />
+      {/* <Footer /> */}
     </DashboardLayout>
   );
 }

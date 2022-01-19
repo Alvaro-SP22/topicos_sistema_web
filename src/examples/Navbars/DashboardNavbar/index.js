@@ -20,6 +20,7 @@ import MDInput from "components/MDInput";
 // Material Dashboard 2 React example components
 import Breadcrumbs from "examples/Breadcrumbs";
 import NotificationItem from "examples/Items/NotificationItem";
+import MDAvatar from "components/MDAvatar";
 
 // Custom styles for DashboardNavbar
 import {
@@ -35,12 +36,15 @@ import {
   useMaterialUIController,
   setTransparentNavbar,
   setMiniSidenav,
-  setOpenConfigurator,
+  // setOpenConfigurator,
 } from "context";
+
+import team2 from "assets/images/team-2.jpg";
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useMaterialUIController();
+  // eslint-disable-next-line no-unused-vars
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator, darkMode } = controller;
   const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
@@ -72,7 +76,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
   }, [dispatch, fixedNavbar]);
 
   const handleMiniSidenav = () => setMiniSidenav(dispatch, !miniSidenav);
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  // const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
 
@@ -89,9 +93,8 @@ function DashboardNavbar({ absolute, light, isMini }) {
       onClose={handleCloseMenu}
       sx={{ mt: 2 }}
     >
-      <NotificationItem icon={<Icon>email</Icon>} title="Revisar mensajes nuevos" />
-      <NotificationItem icon={<Icon>podcasts</Icon>} title="Administrar sesiones de podcast" />
-      <NotificationItem icon={<Icon>shopping_cart</Icon>} title="Pago completado con éxito" />
+      <NotificationItem icon={<Icon>email</Icon>} title="Revisar correo de provedores" />
+      <NotificationItem icon={<Icon>shopping_cart</Icon>} title="Revisar ventas" />
     </Menu>
   );
 
@@ -137,10 +140,24 @@ function DashboardNavbar({ absolute, light, isMini }) {
             <MDBox color={light ? "white" : "inherit"}>
               <Link to="/authentication/sign-in/basic">
                 <IconButton sx={navbarIconButton} size="small" disableRipple>
-                  <Icon sx={iconsStyle}>account_circle</Icon>
+                  {/* <Icon sx={iconsStyle}>account_circle</Icon> */}
+                  <MDAvatar
+                    src={team2}
+                    alt="Alvaro"
+                    size="xs"
+                    sx={() => ({
+                      cursor: "pointer",
+                      position: "relative",
+                      ml: -1.25,
+
+                      "&:hover, &:focus": {
+                        zIndex: "10",
+                      },
+                    })}
+                  />
                 </IconButton>
               </Link>
-              <IconButton
+              {/* <IconButton
                 size="small"
                 disableRipple
                 color="inherit"
@@ -148,7 +165,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
                 onClick={handleConfiguratorOpen}
               >
                 <Icon sx={iconsStyle}>settings</Icon>
-              </IconButton>
+              </IconButton> */}
               <IconButton
                 size="small"
                 disableRipple
