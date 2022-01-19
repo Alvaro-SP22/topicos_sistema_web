@@ -34,8 +34,8 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "Codigo", accessor: "producto", width: "45%", align: "left" },
-      { Header: "Stock", accessor: "stock", width: "45%", align: "left" },
+      { Header: "Producto", accessor: "producto", width: "50%", align: "left" },
+      { Header: "Stock", accessor: "stock", width: "center", align: "center" },
       { Header: "Estado", accessor: "estado", align: "center" },
       { Header: "Ingreso", accessor: "employed", align: "center" },
       { Header: "Accion", accessor: "action", align: "center" },
@@ -44,10 +44,10 @@ export default function data() {
     rows: [
       {
         producto: <Producto image={bl001} name="Bota Larga(Ranger)" />,
-        stock: <> 1</>,
+        stock: <>8</>,
         estado: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" />
+            <MDBadge badgeContent="En stock" color="success" variant="gradient" size="sm" />
           </MDBox>
         ),
         employed: (
@@ -63,9 +63,10 @@ export default function data() {
       },
       {
         producto: <Producto image={bl0011} name="Bota Larga(Negro)" />,
+        stock: <> 0</>,
         estado: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
+            <MDBadge badgeContent="Agotado" color="dark" variant="gradient" size="sm" />
           </MDBox>
         ),
         employed: (
@@ -81,9 +82,10 @@ export default function data() {
       },
       {
         producto: <Producto image={bl0012} name="Bota Larga(Vino)" />,
+        stock: <>10</>,
         estado: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" />
+            <MDBadge badgeContent="En stock" color="success" variant="gradient" size="sm" />
           </MDBox>
         ),
         employed: (
@@ -99,9 +101,10 @@ export default function data() {
       },
       {
         producto: <Producto image={bc001} name="Botin Pasador" />,
+        stock: <>0</>,
         estado: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
+            <MDBadge badgeContent="Agotado" color="dark" variant="gradient" size="sm" />
           </MDBox>
         ),
         employed: (
@@ -117,9 +120,10 @@ export default function data() {
       },
       {
         producto: <Producto image={bc002} name="Botin Hebilla" />,
+        stock: <>0</>,
         estado: (
           <MDBox ml={-1}>
-            <MDBadge badgeContent="offline" color="dark" variant="gradient" size="sm" />
+            <MDBadge badgeContent="Agotado" color="dark" variant="gradient" size="sm" />
           </MDBox>
         ),
         employed: (

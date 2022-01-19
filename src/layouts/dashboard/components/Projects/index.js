@@ -38,9 +38,8 @@ function Projects() {
       open={Boolean(menu)}
       onClose={closeMenu}
     >
-      <MenuItem onClick={closeMenu}>Action</MenuItem>
-      <MenuItem onClick={closeMenu}>Another action</MenuItem>
-      <MenuItem onClick={closeMenu}>Something else</MenuItem>
+      <MenuItem onClick={closeMenu}>Ver ventas</MenuItem>
+      <MenuItem onClick={closeMenu}>Ver productos</MenuItem>
     </Menu>
   );
 
@@ -49,10 +48,10 @@ function Projects() {
       <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <MDBox>
           <MDTypography variant="h6" gutterBottom>
-            Projects
+            Actualización de productos
           </MDTypography>
           <MDBox display="flex" alignItems="center" lineHeight={0}>
-            <Icon
+            {/* <Icon
               sx={{
                 fontWeight: "bold",
                 color: ({ palette: { info } }) => info.main,
@@ -60,9 +59,9 @@ function Projects() {
               }}
             >
               done
-            </Icon>
+            </Icon> */}
             <MDTypography variant="button" fontWeight="regular" color="text">
-              &nbsp;<strong>30 done</strong> this month
+              &nbsp;Existen productos que estan por <strong>agotarse</strong>
             </MDTypography>
           </MDBox>
         </MDBox>

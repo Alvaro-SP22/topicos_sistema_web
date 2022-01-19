@@ -107,6 +107,7 @@ export default function App() {
       return null;
     });
 
+  // eslint-disable-next-line no-unused-vars
   const configsButton = (
     <MDBox
       display="flex"
@@ -140,13 +141,13 @@ export default function App() {
             <Sidenav
               color={sidenavColor}
               brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-              brandName="Material Dashboard 2"
+              brandName="Calzados Maricielo"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
             />
-            <Configurator />
-            {configsButton}
+            {/* <Configurator />
+            {configsButton} */}
           </>
         )}
         {layout === "vr" && <Configurator />}
@@ -164,13 +165,13 @@ export default function App() {
           <Sidenav
             color={sidenavColor}
             brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-            brandName="Material Dashboard 2"
+            brandName="Calzados Maricielo"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
           />
-          <Configurator />
-          {configsButton}
+          {/* <Configurator />
+          {configsButton} */}
         </>
       )}
       {layout === "vr" && <Configurator />}

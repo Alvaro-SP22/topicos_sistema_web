@@ -32,9 +32,9 @@
 import Dashboard from "layouts/dashboard";
 import Clientes from "layouts/tables";
 import Productos from "layouts/productos";
-import Billing from "layouts/billing";
+// import Billing from "layouts/billing";
 import Usuarios from "layouts/usuarios";
-import Profile from "layouts/profile";
+// import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 // import SignUp from "layouts/authentication/sign-up";
 
@@ -54,7 +54,7 @@ const routes = [
     type: "collapse",
     name: "Clientes",
     key: "clientes",
-    icon: <Icon fontSize="small">table_view</Icon>,
+    icon: <Icon fontSize="small">person</Icon>,
     route: "/clientes",
     component: <Clientes />,
   },
@@ -68,28 +68,28 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Usuarios",
-    key: "usuarios",
-    icon: <Icon fontSize="small">group</Icon>,
-    route: "/usuarios",
+    name: "Ventas",
+    key: "ventas",
+    icon: <Icon fontSize="small">store</Icon>,
+    route: "/ventas",
     component: <Usuarios />,
   },
-  {
-    type: "collapse",
-    name: "Perfil",
-    key: "perfil",
-    icon: <Icon fontSize="small">personOutline</Icon>,
-    route: "/perfil",
-    component: <Profile />,
-  },
-  {
-    type: "collapse",
-    name: "Billing",
-    key: "billing",
-    icon: <Icon fontSize="small">receipt_long</Icon>,
-    route: "/billing",
-    component: <Billing />,
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Perfil",
+  //   key: "perfil",
+  //   icon: <Icon fontSize="small">personOutline</Icon>,
+  //   route: "/perfil",
+  //   component: <Profile />,
+  // },
+  // {
+  //   type: "collapse",
+  //   name: "Billing",
+  //   key: "billing",
+  //   icon: <Icon fontSize="small">receipt_long</Icon>,
+  //   route: "/billing",
+  //   component: <Billing />,
+  // },
   {
     type: "collapse",
     name: "Cerrar Sesion",

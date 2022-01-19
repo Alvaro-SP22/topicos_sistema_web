@@ -9,8 +9,10 @@ import MDTypography from "components/MDTypography";
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
+// import Footer from "examples/Footer";
 import DataTable from "examples/Tables/DataTable";
+import MDButton from "components/MDButton";
+import Icon from "@mui/material/Icon";
 
 // Data
 import productosData from "layouts/productos/data/productosData";
@@ -23,6 +25,18 @@ function Productos() {
       <DashboardNavbar />
       <MDBox pt={6} pb={3}>
         <Grid container spacing={6}>
+          <Grid item xs={12} textAlign="right">
+            <MDButton color="primary">
+              <Grid container spacing={1}>
+                <Grid item xs={1}>
+                  <Icon fontSize="small">add</Icon>
+                </Grid>
+                <Grid item xs={11}>
+                  Registrar producto
+                </Grid>
+              </Grid>
+            </MDButton>
+          </Grid>
           <Grid item xs={12}>
             <Card>
               <MDBox
@@ -52,7 +66,7 @@ function Productos() {
           </Grid>
         </Grid>
       </MDBox>
-      <Footer />
+      {/* <Footer /> */}
     </DashboardLayout>
   );
 }
