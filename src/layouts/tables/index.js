@@ -17,18 +17,86 @@ import Icon from "@mui/material/Icon";
 // Data
 import authorsTableData from "layouts/tables/data/authorsTableData";
 // import projectsTableData from "layouts/tables/data/projectsTableData";
+import Modal from "@mui/material/Modal";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import MDInput from "components/MDInput";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  borderRadius: "10px",
+  border: 0,
+  boxShadow: 24,
+  p: 4,
+};
 
 function Clientes() {
   const { columns, rows } = authorsTableData();
   // const { columns: pColumns, rows: pRows } = projectsTableData();
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <DashboardLayout>
       <DashboardNavbar />
       <MDBox pt={6} pb={3}>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Registrar Cliente
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              <Grid container>
+                <Grid xs={12} item>
+                  <Typography variant="subtitle2">Nombre</Typography>
+                  <MDBox>
+                    <MDInput placeholder="Nombre" size="full" />
+                  </MDBox>
+                </Grid>
+                <Grid xs={12} item>
+                  <Typography variant="subtitle2">Celular</Typography>
+                  <MDBox>
+                    <MDInput placeholder="Celular" size="full" />
+                  </MDBox>
+                </Grid>
+                <Grid xs={12} item>
+                  <Typography variant="subtitle2">Correo electrónico</Typography>
+                  <MDBox>
+                    <MDInput placeholder="Correo electrónico" size="full" />
+                  </MDBox>
+                </Grid>
+                <Grid xs={12} item>
+                  <Typography variant="subtitle2">Dirección</Typography>
+                  <MDBox>
+                    <MDInput placeholder="Dirección" size="full" />
+                  </MDBox>
+                </Grid>
+                <Grid xs={12} item>
+                  <Typography variant="subtitle2">Ciudad</Typography>
+                  <MDInput placeholder="Ciudad" />
+                </Grid>
+                <Grid xs={12} item>
+                  <MDButton color="secondary">Enviar</MDButton>
+                </Grid>
+              </Grid>
+            </Typography>
+          </Box>
+        </Modal>
         <Grid container spacing={6}>
           <Grid item xs={12} textAlign="right">
-            <MDButton color="primary">
+            <MDButton color="primary" onClick={handleOpen}>
               <Grid container spacing={1}>
                 <Grid item xs={1}>
                   <Icon fontSize="small">add</Icon>

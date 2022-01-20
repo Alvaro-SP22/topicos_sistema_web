@@ -1,13 +1,15 @@
 /* eslint-disable react/prop-types */
 
 // @mui material components
-import Icon from "@mui/material/Icon";
+// import Icon from "@mui/material/Icon";
 
 // Soft UI Dashboard React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 import MDProgress from "components/MDProgress";
+import Grid from "@mui/material/Grid";
+import MDButton from "components/MDButton";
 
 // Images
 // import LogoAsana from "assets/images/small-logos/logo-asana.svg";
@@ -41,11 +43,44 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "Vendedor", accessor: "vendedor", width: "30%", align: "left" },
-      { Header: "Monto", accessor: "monto", align: "center" },
-      { Header: "Estado", accessor: "status", align: "center" },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Vendedor
+          </MDTypography>
+        ),
+        accessor: "vendedor",
+        width: "30%",
+        align: "left",
+      },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Monto
+          </MDTypography>
+        ),
+        accessor: "monto",
+        align: "center",
+      },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Estado
+          </MDTypography>
+        ),
+        accessor: "status",
+        align: "center",
+      },
       // { Header: "completion", accessor: "completion", align: "center" },
-      { Header: "Acción", accessor: "accion", align: "center" },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Acciones
+          </MDTypography>
+        ),
+        accessor: "accion",
+        align: "center",
+      },
     ],
 
     rows: [
@@ -63,9 +98,16 @@ export default function data() {
         ),
         completion: <Progress color="info" value={60} />,
         accion: (
-          <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">Editar</MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">Eliminar</MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
       {
@@ -82,9 +124,16 @@ export default function data() {
         ),
         completion: <Progress color="info" value={60} />,
         accion: (
-          <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">Editar</MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">Eliminar</MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
     ],

@@ -18,6 +18,8 @@ import bl0011 from "assets/images/BL001_1.jpeg";
 import bl0012 from "assets/images/BL001_2.jpg";
 import bc001 from "assets/images/BC001.jpeg";
 import bc002 from "assets/images/BC002.jpeg";
+import Grid from "@mui/material/Grid";
+import MDButton from "components/MDButton";
 
 export default function data() {
   const Producto = ({ image, name, email }) => (
@@ -34,11 +36,53 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "Producto", accessor: "producto", width: "50%", align: "left" },
-      { Header: "Stock", accessor: "stock", width: "center", align: "center" },
-      { Header: "Estado", accessor: "estado", align: "center" },
-      { Header: "Ingreso", accessor: "employed", align: "center" },
-      { Header: "Accion", accessor: "action", align: "center" },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Producto
+          </MDTypography>
+        ),
+        accessor: "producto",
+        width: "50%",
+        align: "left",
+      },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Stock
+          </MDTypography>
+        ),
+        accessor: "stock",
+        width: "center",
+        align: "center",
+      },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Estado
+          </MDTypography>
+        ),
+        accessor: "estado",
+        align: "center",
+      },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Ingreso
+          </MDTypography>
+        ),
+        accessor: "employed",
+        align: "center",
+      },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Acciones
+          </MDTypography>
+        ),
+        accessor: "action",
+        align: "center",
+      },
     ],
 
     rows: [
@@ -56,9 +100,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">Editar</MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">Eliminar</MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
       {
@@ -75,9 +126,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">Editar</MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">Eliminar</MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
       {
@@ -94,9 +152,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">Editar</MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">Eliminar</MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
       {
@@ -113,9 +178,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">Editar</MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">Eliminar</MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
       {
@@ -132,9 +204,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">Editar</MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">Eliminar</MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
     ],

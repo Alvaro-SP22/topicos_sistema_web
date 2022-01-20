@@ -24,7 +24,7 @@ function Breadcrumbs({ icon, title, route, light }) {
           },
         }}
       >
-        <Link to="/dashboard">
+        <Link to="/panel">
           <MDTypography
             component="span"
             variant="body2"

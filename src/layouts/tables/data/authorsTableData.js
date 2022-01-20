@@ -5,6 +5,8 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 import MDBadge from "components/MDBadge";
+import MDButton from "components/MDButton";
+import Grid from "@mui/material/Grid";
 
 // Images
 // import logoXD from "assets/images/small-logos/logo-xd.svg";
@@ -32,10 +34,35 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "Codigo", accessor: "author", width: "45%", align: "left" },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Código
+          </MDTypography>
+        ),
+        accessor: "author",
+        width: "45%",
+        align: "left",
+      },
       // { Header: "Estado", accessor: "estado", align: "center" },
-      { Header: "Ingreso", accessor: "employed", align: "center" },
-      { Header: "Accion", accessor: "action", align: "center" },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Ingreso
+          </MDTypography>
+        ),
+        accessor: "employed",
+        align: "center",
+      },
+      {
+        Header: (
+          <MDTypography variant="h6" color="black">
+            Acciones
+          </MDTypography>
+        ),
+        accessor: "action",
+        align: "center",
+      },
     ],
 
     rows: [
@@ -52,9 +79,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">Editar</MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">Eliminar</MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
       {
@@ -70,9 +104,16 @@ export default function data() {
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">Editar</MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">Eliminar</MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
     ],

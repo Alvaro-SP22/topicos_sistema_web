@@ -84,7 +84,7 @@ function Basic() {
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="info" fullWidth href="dashboard">
+              <MDButton variant="gradient" color="info" fullWidth href="panel">
                 Iniciar Sesión
               </MDButton>
             </MDBox>
