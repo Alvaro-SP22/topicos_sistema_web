@@ -17,11 +17,14 @@ import DataTable from "examples/Tables/DataTable";
 import projectsTableData from "layouts/tables/data/projectsTableData";
 import MDButton from "components/MDButton";
 import Icon from "@mui/material/Icon";
+import { useMaterialUIController } from "context";
+import selectLetter from "../../utils/selectLetter";
 
 function Usuarios() {
   // const { columns, rows } = authorsTableData();
   const { columns: pColumns, rows: pRows } = projectsTableData();
-
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -34,7 +37,13 @@ function Usuarios() {
                   <Icon fontSize="small">add</Icon>
                 </Grid>
                 <Grid item xs={11}>
-                  Registrar venta
+                  <MDTypography
+                    color="white"
+                    fontWeight="bold"
+                    variant={selectLetter(sizeLetter, 0)}
+                  >
+                    Registrar venta
+                  </MDTypography>
                 </Grid>
               </Grid>
             </MDButton>
@@ -51,7 +60,7 @@ function Usuarios() {
                 borderRadius="lg"
                 coloredShadow="info"
               >
-                <MDTypography variant="h6" color="white">
+                <MDTypography variant={selectLetter(sizeLetter, 3)} color="white">
                   Historial de ventas
                 </MDTypography>
               </MDBox>

@@ -17,14 +17,16 @@ import {
   collapseIcon,
   collapseText,
 } from "examples/Sidenav/styles/sidenavCollapse";
-
-// Material Dashboard 2 PRO React context
 import { useMaterialUIController } from "context";
+import MDTypography from "components/MDTypography";
+import selectLetter from "../../utils/selectLetter";
+// Material Dashboard 2 PRO React context
 
 function SidenavCollapse({ icon, name, active, ...rest }) {
   const [controller] = useMaterialUIController();
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = controller;
-
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   return (
     <>
       <ListItem component="li">
@@ -53,7 +55,11 @@ function SidenavCollapse({ icon, name, active, ...rest }) {
           </ListItemIcon>
 
           <ListItemText
-            primary={name}
+            primary={
+              <MDTypography color="white" variant={selectLetter(sizeLetter)}>
+                {name}
+              </MDTypography>
+            }
             sx={(theme) =>
               collapseText(theme, {
                 miniSidenav,

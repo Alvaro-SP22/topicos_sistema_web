@@ -15,6 +15,8 @@ import DataTable from "examples/Tables/DataTable";
 
 // Data
 import data from "layouts/dashboard/components/Projects/data";
+import { useMaterialUIController } from "context";
+import selectLetter from "../../../../utils/selectLetter";
 
 function Projects() {
   const { columns, rows } = data();
@@ -22,6 +24,9 @@ function Projects() {
 
   const openMenu = ({ currentTarget }) => setMenu(currentTarget);
   const closeMenu = () => setMenu(null);
+
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
 
   const renderMenu = (
     <Menu
@@ -47,7 +52,7 @@ function Projects() {
     <Card>
       <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <MDBox>
-          <MDTypography variant="h6" gutterBottom>
+          <MDTypography variant={selectLetter(sizeLetter, 3)} gutterBottom>
             Actualización de productos
           </MDTypography>
           <MDBox display="flex" alignItems="center" lineHeight={0}>
@@ -60,7 +65,7 @@ function Projects() {
             >
               done
             </Icon> */}
-            <MDTypography variant="button" fontWeight="regular" color="text">
+            <MDTypography variant={selectLetter(sizeLetter)} fontWeight="regular" color="text">
               &nbsp;Existen productos que estan por <strong>agotarse</strong>
             </MDTypography>
           </MDBox>

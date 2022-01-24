@@ -5,6 +5,8 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 import MDBadge from "components/MDBadge";
+import MDButton from "components/MDButton";
+import Grid from "@mui/material/Grid";
 
 // Images
 // import logoXD from "assets/images/small-logos/logo-xd.svg";
@@ -16,26 +18,55 @@ import MDBadge from "components/MDBadge";
 import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 // import team4 from "assets/images/team-4.jpg";
+import { useMaterialUIController } from "context";
+import selectLetter from "../../../utils/selectLetter";
 
 export default function data() {
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   const Author = ({ image, name, email }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
       <MDAvatar src={image} name={name} size="sm" />
       <MDBox ml={2} lineHeight={1}>
-        <MDTypography display="block" variant="button" fontWeight="medium">
+        <MDTypography display="block" variant={selectLetter(sizeLetter)} fontWeight="medium">
           {name}
         </MDTypography>
-        <MDTypography variant="caption">{email}</MDTypography>
+        <MDTypography variant={selectLetter(sizeLetter, 0)}>{email}</MDTypography>
       </MDBox>
     </MDBox>
   );
 
   return {
     columns: [
-      { Header: "Codigo", accessor: "author", width: "45%", align: "left" },
+      {
+        Header: (
+          <MDTypography variant={selectLetter(sizeLetter, 3)} color="black">
+            Código
+          </MDTypography>
+        ),
+        accessor: "author",
+        width: "45%",
+        align: "left",
+      },
       // { Header: "Estado", accessor: "estado", align: "center" },
-      { Header: "Ingreso", accessor: "employed", align: "center" },
-      { Header: "Accion", accessor: "action", align: "center" },
+      {
+        Header: (
+          <MDTypography variant={selectLetter(sizeLetter, 3)} color="black">
+            Ingreso
+          </MDTypography>
+        ),
+        accessor: "employed",
+        align: "center",
+      },
+      {
+        Header: (
+          <MDTypography variant={selectLetter(sizeLetter, 3)} color="black">
+            Acciones
+          </MDTypography>
+        ),
+        accessor: "action",
+        align: "center",
+      },
     ],
 
     rows: [
@@ -47,14 +78,35 @@ export default function data() {
           </MDBox>
         ),
         employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+          <MDTypography
+            component="a"
+            href="#"
+            variant={selectLetter(sizeLetter)}
+            color="text"
+            fontWeight="medium"
+          >
             23/04/18
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">
+                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
+                    Editar
+                  </MDTypography>
+                </MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">
+                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
+                    Eliminar
+                  </MDTypography>
+                </MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
       {
@@ -65,14 +117,35 @@ export default function data() {
           </MDBox>
         ),
         employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+          <MDTypography
+            component="a"
+            href="#"
+            variant={selectLetter(sizeLetter)}
+            color="text"
+            fontWeight="medium"
+          >
             11/01/19
           </MDTypography>
         ),
         action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Editar
-          </MDTypography>
+          <>
+            <Grid container spacing={2}>
+              <Grid item>
+                <MDButton color="info">
+                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
+                    Editar
+                  </MDTypography>
+                </MDButton>
+              </Grid>
+              <Grid item>
+                <MDButton color="error">
+                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
+                    Eliminar
+                  </MDTypography>
+                </MDButton>
+              </Grid>
+            </Grid>
+          </>
         ),
       },
     ],

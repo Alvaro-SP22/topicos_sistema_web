@@ -20,8 +20,12 @@ import bl0011 from "assets/images/BL001_1.jpeg";
 import bl0012 from "assets/images/BL001_2.jpg";
 import bc001 from "assets/images/BC001.jpeg";
 import bc002 from "assets/images/BC002.jpeg";
+import { useMaterialUIController } from "context";
+import selectLetter from "../../../../../utils/selectLetter";
 
 export default function data() {
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   // eslint-disable-next-line no-unused-vars
   const avatars = (members) =>
     members.map(([image, name]) => (
@@ -51,7 +55,7 @@ export default function data() {
   const Company = ({ image, name }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
       <MDAvatar src={image} name={name} size="sm" />
-      <MDTypography variant="button" fontWeight="medium" ml={1} lineHeight={1}>
+      <MDTypography variant={selectLetter(sizeLetter)} fontWeight="medium" ml={1} lineHeight={1}>
         {name}
       </MDTypography>
     </MDBox>
@@ -59,17 +63,31 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "Producto", accessor: "companies", width: "45%", align: "left" },
-      { Header: "Stock", accessor: "stock", width: "10%", align: "center" },
-      { Header: "Próximo ingreso", accessor: "budget", align: "center" },
+      {
+        Header: <MDTypography variant={selectLetter(sizeLetter)}>Producto</MDTypography>,
+        accessor: "companies",
+        width: "45%",
+        align: "left",
+      },
+      {
+        Header: <MDTypography variant={selectLetter(sizeLetter)}>Stock</MDTypography>,
+        accessor: "stock",
+        width: "10%",
+        align: "center",
+      },
+      {
+        Header: <MDTypography variant={selectLetter(sizeLetter)}>Próximo ingreso</MDTypography>,
+        accessor: "budget",
+        align: "center",
+      },
     ],
 
     rows: [
       {
         companies: <Company image={bl001} name="Bota Larga(Ranger)" />,
-        stock: <>3</>,
+        stock: <MDTypography variant={selectLetter(sizeLetter)}>3</MDTypography>,
         budget: (
-          <MDTypography variant="caption" color="text" fontWeight="medium">
+          <MDTypography variant={selectLetter(sizeLetter)} color="text" fontWeight="medium">
             10/02/2022
           </MDTypography>
         ),
@@ -81,9 +99,9 @@ export default function data() {
       },
       {
         companies: <Company image={bl0011} name="Bota Larga(Negro)" />,
-        stock: <>1</>,
+        stock: <MDTypography variant={selectLetter(sizeLetter)}>1</MDTypography>,
         budget: (
-          <MDTypography variant="caption" color="text" fontWeight="medium">
+          <MDTypography variant={selectLetter(sizeLetter)} color="text" fontWeight="medium">
             01/02/2022
           </MDTypography>
         ),
@@ -95,9 +113,9 @@ export default function data() {
       },
       {
         companies: <Company image={bl0012} name="Bota Larga(Vino)s" />,
-        stock: <>10</>,
+        stock: <MDTypography variant={selectLetter(sizeLetter)}>10</MDTypography>,
         budget: (
-          <MDTypography variant="caption" color="text" fontWeight="medium">
+          <MDTypography variant={selectLetter(sizeLetter)} color="text" fontWeight="medium">
             No programado
           </MDTypography>
         ),
@@ -109,9 +127,9 @@ export default function data() {
       },
       {
         companies: <Company image={bc001} name="Botin Pasador" />,
-        stock: <>8</>,
+        stock: <MDTypography variant={selectLetter(sizeLetter)}>8</MDTypography>,
         budget: (
-          <MDTypography variant="caption" color="text" fontWeight="medium">
+          <MDTypography variant={selectLetter(sizeLetter)} color="text" fontWeight="medium">
             31/01/2022
           </MDTypography>
         ),
@@ -123,9 +141,9 @@ export default function data() {
       },
       {
         companies: <Company image={bc002} name="Botin Hebilla" />,
-        stock: <>9</>,
+        stock: <MDTypography variant={selectLetter(sizeLetter)}>9</MDTypography>,
         budget: (
-          <MDTypography variant="caption" color="text" fontWeight="medium">
+          <MDTypography variant={selectLetter(sizeLetter)} color="text" fontWeight="medium">
             No programado
           </MDTypography>
         ),

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 
 // @mui material components
@@ -19,14 +20,43 @@ import MDButton from "components/MDButton";
 
 // Authentication layout components
 import BasicLayout from "layouts/authentication/components/BasicLayout";
-
+import { isEmail, isEmpty } from "validator";
 // Images
 import bgImage from "assets/images/bg_login.jpg";
+import { useMaterialUIController } from "context";
+import { useNavigate } from "react-router-dom";
+import selectLetter from "../../../utils/selectLetter";
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false);
-
+  const [errors, setErrors] = useState({
+    email: false,
+    pass: false,
+  });
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+  const navigate = useNavigate();
+  const handleSignIn = () => {
+    let status = false;
+    const email = document.getElementById("email").value;
+    const pass = document.getElementById("password").value;
+    if (!isEmpty(email) || !isEmpty(pass)) {
+      setErrors({
+        email: !isEmail(email),
+        pass: pass.length < 4,
+      });
+      if (errors.email === false && errors.pass === false) status = true;
+    } else {
+      setErrors({
+        email: true,
+        pass: true,
+      });
+    }
+    if (status) {
+      navigate("panel");
+    }
+  };
 
   return (
     <BasicLayout image={bgImage}>
@@ -64,12 +94,26 @@ function Basic() {
           </Grid>
         </MDBox>
         <MDBox pt={4} pb={3} px={3}>
-          <MDBox component="form" role="form">
+          <MDBox>
             <MDBox mb={2}>
-              <MDInput type="email" label="Correo electrónico" fullWidth />
+              <MDInput type="email" id="email" label="Correo electrónico" fullWidth />
+              <MDTypography
+                fontWeight="bold"
+                variant={selectLetter(sizeLetter, 4)}
+                color={errors.email ? "error" : "text"}
+              >
+                {errors.email ? "Ingresa un correo válido" : ""}
+              </MDTypography>
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="password" label="Contraseña" fullWidth />
+              <MDInput type="password" label="Contraseña" fullWidth id="password" />
+              <MDTypography
+                fontWeight="bold"
+                variant={selectLetter(sizeLetter, 4)}
+                color={errors.pass ? "error" : "text"}
+              >
+                {errors.pass ? "Ingresa una contraseña válida" : ""}
+              </MDTypography>
             </MDBox>
             <MDBox display="flex" alignItems="center" ml={-1}>
               <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -84,7 +128,7 @@ function Basic() {
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="info" fullWidth href="dashboard">
+              <MDButton variant="gradient" color="info" fullWidth onClick={handleSignIn}>
                 Iniciar Sesión
               </MDButton>
             </MDBox>

@@ -16,10 +16,13 @@ import Icon from "@mui/material/Icon";
 
 // Data
 import productosData from "layouts/productos/data/productosData";
+import { useMaterialUIController } from "context";
+import selectLetter from "../../utils/selectLetter";
 
 function Productos() {
   const { columns, rows } = productosData();
-
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -32,7 +35,13 @@ function Productos() {
                   <Icon fontSize="small">add</Icon>
                 </Grid>
                 <Grid item xs={11}>
-                  Registrar producto
+                  <MDTypography
+                    color="white"
+                    fontWeight="bold"
+                    variant={selectLetter(sizeLetter, 0)}
+                  >
+                    Registrar producto
+                  </MDTypography>
                 </Grid>
               </Grid>
             </MDButton>
@@ -49,7 +58,7 @@ function Productos() {
                 borderRadius="lg"
                 coloredShadow="info"
               >
-                <MDTypography variant="h6" color="white">
+                <MDTypography variant={selectLetter(sizeLetter, 3)} color="white">
                   Productos
                 </MDTypography>
               </MDBox>
