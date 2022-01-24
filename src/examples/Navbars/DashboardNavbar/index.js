@@ -36,6 +36,7 @@ import {
   useMaterialUIController,
   setTransparentNavbar,
   setMiniSidenav,
+  setSizeLetter,
   // setOpenConfigurator,
 } from "context";
 
@@ -133,6 +134,27 @@ function DashboardNavbar({ absolute, light, isMini }) {
               <Icon sx={iconsStyle} fontSize="medium">
                 {miniSidenav ? "menu_open" : "menu"}
               </Icon>
+            </IconButton>
+            <IconButton
+              onClick={() => {
+                setSizeLetter(dispatch, "small");
+              }}
+            >
+              a
+            </IconButton>
+            <IconButton
+              onClick={() => {
+                setSizeLetter(dispatch, "medium");
+              }}
+            >
+              A
+            </IconButton>
+            <IconButton
+              onClick={() => {
+                setSizeLetter(dispatch, "big");
+              }}
+            >
+              A
             </IconButton>
             <MDBox pr={1}>
               <MDInput label="Buscar..." />

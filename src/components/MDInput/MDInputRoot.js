@@ -50,6 +50,7 @@ export default styled(TextField)(({ theme, ownerState }) => {
   return {
     backgroundColor: disabled ? `${grey[200]} !important` : transparent.main,
     pointerEvents: disabled ? "none" : "auto",
+    width: "100%",
     ...(error && errorStyles()),
     ...(success && successStyles()),
   };

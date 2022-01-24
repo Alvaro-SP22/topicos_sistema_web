@@ -17,10 +17,13 @@ import MDTypography from "components/MDTypography";
 
 // ReportsLineChart configurations
 import configs from "examples/Charts/LineCharts/ReportsLineChart/configs";
+import { useMaterialUIController } from "context";
+import selectLetter from "../../../../utils/selectLetter";
 
 function ReportsLineChart({ color, title, description, date, chart }) {
   const { data, options } = configs(chart.labels || [], chart.datasets || {});
-
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   return (
     <Card sx={{ height: "100%" }}>
       <MDBox padding="1rem">
@@ -42,18 +45,28 @@ function ReportsLineChart({ color, title, description, date, chart }) {
           [chart, color]
         )}
         <MDBox pt={3} pb={1} px={1}>
-          <MDTypography variant="h6" textTransform="capitalize">
+          <MDTypography variant={selectLetter(sizeLetter, 3)} textTransform="capitalize">
             {title}
           </MDTypography>
-          <MDTypography component="div" variant="button" color="text" fontWeight="light">
+          <MDTypography
+            component="div"
+            variant={selectLetter(sizeLetter)}
+            color="text"
+            fontWeight="light"
+          >
             {description}
           </MDTypography>
           <Divider />
           <MDBox display="flex" alignItems="center">
-            <MDTypography variant="button" color="text" lineHeight={1} sx={{ mt: 0.15, mr: 0.5 }}>
+            <MDTypography
+              variant={selectLetter(sizeLetter)}
+              color="text"
+              lineHeight={1}
+              sx={{ mt: 0.15, mr: 0.5 }}
+            >
               <Icon>schedule</Icon>
             </MDTypography>
-            <MDTypography variant="button" color="text" fontWeight="light">
+            <MDTypography variant={selectLetter(sizeLetter)} color="text" fontWeight="light">
               {date}
             </MDTypography>
           </MDBox>

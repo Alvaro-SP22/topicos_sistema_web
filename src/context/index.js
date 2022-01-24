@@ -47,6 +47,9 @@ function reducer(state, action) {
     case "DARKMODE": {
       return { ...state, darkMode: action.value };
     }
+    case "SIZE_LETTER": {
+      return { ...state, sizeLetter: action.value };
+    }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -55,6 +58,7 @@ function reducer(state, action) {
 
 // Material Dashboard 2 PRO React context provider
 function MaterialUIControllerProvider({ children }) {
+  // eslint-disable-next-line no-unused-vars
   const initialState = {
     miniSidenav: false,
     transparentSidenav: false,
@@ -66,6 +70,7 @@ function MaterialUIControllerProvider({ children }) {
     direction: "ltr",
     layout: "dashboard",
     darkMode: false,
+    sizeLetter: "small",
   };
 
   const [controller, dispatch] = useReducer(reducer, initialState);
@@ -102,6 +107,7 @@ const setOpenConfigurator = (dispatch, value) => dispatch({ type: "OPEN_CONFIGUR
 const setDirection = (dispatch, value) => dispatch({ type: "DIRECTION", value });
 const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
 const setDarkMode = (dispatch, value) => dispatch({ type: "DARKMODE", value });
+const setSizeLetter = (dispatch, value) => dispatch({ type: "SIZE_LETTER", value });
 
 export {
   MaterialUIControllerProvider,
@@ -116,4 +122,5 @@ export {
   setDirection,
   setLayout,
   setDarkMode,
+  setSizeLetter,
 };

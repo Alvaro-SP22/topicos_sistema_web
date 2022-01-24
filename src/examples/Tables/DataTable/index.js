@@ -23,6 +23,8 @@ import MDPagination from "components/MDPagination";
 // Material Dashboard 2 React example components
 import DataTableHeadCell from "examples/Tables/DataTable/DataTableHeadCell";
 import DataTableBodyCell from "examples/Tables/DataTable/DataTableBodyCell";
+import { useMaterialUIController } from "context";
+import selectLetter from "../../../utils/selectLetter";
 
 function DataTable({
   entriesPerPage,
@@ -33,6 +35,8 @@ function DataTable({
   isSorted,
   noEndBorder,
 }) {
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   const defaultValue = entriesPerPage.defaultValue ? entriesPerPage.defaultValue : 10;
   const entries = entriesPerPage.entries
     ? entriesPerPage.entries.map((el) => el.toString())
@@ -147,7 +151,7 @@ function DataTable({
                 sx={{ width: "5rem" }}
                 renderInput={(params) => <MDInput {...params} />}
               />
-              <MDTypography variant="caption" color="secondary">
+              <MDTypography variant={selectLetter(sizeLetter)} color="secondary">
                 &nbsp;&nbsp;entries per page
               </MDTypography>
             </MDBox>
@@ -214,7 +218,7 @@ function DataTable({
       >
         {showTotalEntries && (
           <MDBox mb={{ xs: 3, sm: 0 }}>
-            <MDTypography variant="button" color="secondary" fontWeight="regular">
+            <MDTypography variant={selectLetter(sizeLetter)} color="secondary" fontWeight="regular">
               Showing {entriesStart} to {entriesEnd} of {rows.length} entries
             </MDTypography>
           </MDBox>

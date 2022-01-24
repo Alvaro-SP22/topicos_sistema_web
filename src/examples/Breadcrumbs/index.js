@@ -11,10 +11,13 @@ import Icon from "@mui/material/Icon";
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
+import { useMaterialUIController } from "context";
+import selectLetter from "../../utils/selectLetter";
 
 function Breadcrumbs({ icon, title, route, light }) {
   const routes = route.slice(0, -1);
-
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   return (
     <MDBox mr={{ xs: 0, xl: 8 }}>
       <MuiBreadcrumbs
@@ -27,7 +30,7 @@ function Breadcrumbs({ icon, title, route, light }) {
         <Link to="/panel">
           <MDTypography
             component="span"
-            variant="body2"
+            variant={selectLetter(sizeLetter)}
             color={light ? "white" : "dark"}
             opacity={light ? 0.8 : 0.5}
             sx={{ lineHeight: 0 }}
@@ -39,7 +42,7 @@ function Breadcrumbs({ icon, title, route, light }) {
           <Link to={`/${el}`} key={el}>
             <MDTypography
               component="span"
-              variant="button"
+              variant={selectLetter(sizeLetter)}
               fontWeight="regular"
               textTransform="capitalize"
               color={light ? "white" : "dark"}
@@ -51,7 +54,7 @@ function Breadcrumbs({ icon, title, route, light }) {
           </Link>
         ))}
         <MDTypography
-          variant="button"
+          variant={selectLetter(sizeLetter)}
           fontWeight="regular"
           textTransform="capitalize"
           color={light ? "white" : "dark"}
@@ -63,7 +66,7 @@ function Breadcrumbs({ icon, title, route, light }) {
       <MDTypography
         fontWeight="bold"
         textTransform="capitalize"
-        variant="h6"
+        variant={selectLetter(sizeLetter, 3)}
         color={light ? "white" : "dark"}
         noWrap
       >

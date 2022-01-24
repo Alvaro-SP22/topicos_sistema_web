@@ -20,11 +20,22 @@ import team2 from "assets/images/team-2.jpg";
 // import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
 // import logoInvesion from "assets/images/small-logos/logo-invision.svg";
 
+import { useMaterialUIController } from "context";
+import selectLetter from "../../../utils/selectLetter";
+
 export default function data() {
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   const Project = ({ image, name }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
       <MDAvatar src={image} name={name} size="sm" variant="rounded" />
-      <MDTypography display="block" variant="button" fontWeight="medium" ml={1} lineHeight={1}>
+      <MDTypography
+        display="block"
+        variant={selectLetter(sizeLetter)}
+        fontWeight="medium"
+        ml={1}
+        lineHeight={1}
+      >
         {name}
       </MDTypography>
     </MDBox>
@@ -32,7 +43,7 @@ export default function data() {
 
   const Progress = ({ color, value }) => (
     <MDBox display="flex" alignItems="center">
-      <MDTypography variant="caption" color="text" fontWeight="medium">
+      <MDTypography variant={selectLetter(sizeLetter)} color="text" fontWeight="medium">
         {value}%
       </MDTypography>
       <MDBox ml={0.5} width="9rem">
@@ -45,7 +56,7 @@ export default function data() {
     columns: [
       {
         Header: (
-          <MDTypography variant="h6" color="black">
+          <MDTypography variant={selectLetter(sizeLetter, 3)} color="black">
             Vendedor
           </MDTypography>
         ),
@@ -55,7 +66,7 @@ export default function data() {
       },
       {
         Header: (
-          <MDTypography variant="h6" color="black">
+          <MDTypography variant={selectLetter(sizeLetter, 3)} color="black">
             Monto
           </MDTypography>
         ),
@@ -64,7 +75,7 @@ export default function data() {
       },
       {
         Header: (
-          <MDTypography variant="h6" color="black">
+          <MDTypography variant={selectLetter(sizeLetter, 3)} color="black">
             Estado
           </MDTypography>
         ),
@@ -74,7 +85,7 @@ export default function data() {
       // { Header: "completion", accessor: "completion", align: "center" },
       {
         Header: (
-          <MDTypography variant="h6" color="black">
+          <MDTypography variant={selectLetter(sizeLetter, 3)} color="black">
             Acciones
           </MDTypography>
         ),
@@ -87,12 +98,24 @@ export default function data() {
       {
         vendedor: <Project image={team2} name="Alvaro Chico" />,
         monto: (
-          <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
+          <MDTypography
+            component="a"
+            href="#"
+            variant={selectLetter(sizeLetter)}
+            color="text"
+            fontWeight="medium"
+          >
             S/ 250.00
           </MDTypography>
         ),
         status: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+          <MDTypography
+            component="a"
+            href="#"
+            variant={selectLetter(sizeLetter, 0)}
+            color="text"
+            fontWeight="medium"
+          >
             Procesada
           </MDTypography>
         ),
@@ -101,10 +124,18 @@ export default function data() {
           <>
             <Grid container spacing={2}>
               <Grid item>
-                <MDButton color="info">Editar</MDButton>
+                <MDButton color="info">
+                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
+                    Editar
+                  </MDTypography>
+                </MDButton>
               </Grid>
               <Grid item>
-                <MDButton color="error">Eliminar</MDButton>
+                <MDButton color="error">
+                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
+                    Eliminar
+                  </MDTypography>
+                </MDButton>
               </Grid>
             </Grid>
           </>
@@ -113,12 +144,24 @@ export default function data() {
       {
         vendedor: <Project image={team2} name="Alvaro Chico" />,
         monto: (
-          <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
+          <MDTypography
+            component="a"
+            href="#"
+            variant={selectLetter(sizeLetter)}
+            color="text"
+            fontWeight="medium"
+          >
             S/ 400.00
           </MDTypography>
         ),
         status: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+          <MDTypography
+            component="a"
+            href="#"
+            variant={selectLetter(sizeLetter, 0)}
+            color="text"
+            fontWeight="medium"
+          >
             Procesada
           </MDTypography>
         ),
@@ -127,10 +170,18 @@ export default function data() {
           <>
             <Grid container spacing={2}>
               <Grid item>
-                <MDButton color="info">Editar</MDButton>
+                <MDButton color="info">
+                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
+                    Editar
+                  </MDTypography>
+                </MDButton>
               </Grid>
               <Grid item>
-                <MDButton color="error">Eliminar</MDButton>
+                <MDButton color="error">
+                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
+                    Eliminar
+                  </MDTypography>
+                </MDButton>
               </Grid>
             </Grid>
           </>

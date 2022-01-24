@@ -22,6 +22,8 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import MDInput from "components/MDInput";
+import { useMaterialUIController } from "context";
+import selectLetter from "../../utils/selectLetter";
 
 const style = {
   position: "absolute",
@@ -42,7 +44,8 @@ function Clientes() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -54,37 +57,37 @@ function Clientes() {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
+            <Typography id="modal-modal-title" variant={selectLetter(sizeLetter, 3)}>
               Registrar Cliente
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               <Grid container>
                 <Grid xs={12} item>
-                  <Typography variant="subtitle2">Nombre</Typography>
+                  <Typography variant={selectLetter(sizeLetter)}>Nombre</Typography>
                   <MDBox>
-                    <MDInput placeholder="Nombre" size="full" />
+                    <MDInput placeholder="Nombre" xs={{ width: "100%" }} />
                   </MDBox>
                 </Grid>
                 <Grid xs={12} item>
-                  <Typography variant="subtitle2">Celular</Typography>
+                  <Typography variant={selectLetter(sizeLetter)}>Celular</Typography>
                   <MDBox>
-                    <MDInput placeholder="Celular" size="full" />
+                    <MDInput placeholder="Celular" xs={{ width: "100%" }} />
                   </MDBox>
                 </Grid>
                 <Grid xs={12} item>
-                  <Typography variant="subtitle2">Correo electrónico</Typography>
+                  <Typography variant={selectLetter(sizeLetter)}>Correo electrónico</Typography>
                   <MDBox>
-                    <MDInput placeholder="Correo electrónico" size="full" />
+                    <MDInput placeholder="Correo electrónico" xs={{ width: "100%" }} />
                   </MDBox>
                 </Grid>
                 <Grid xs={12} item>
-                  <Typography variant="subtitle2">Dirección</Typography>
+                  <Typography variant={selectLetter(sizeLetter)}>Dirección</Typography>
                   <MDBox>
-                    <MDInput placeholder="Dirección" size="full" />
+                    <MDInput placeholder="Dirección" xs={{ width: "100%" }} />
                   </MDBox>
                 </Grid>
                 <Grid xs={12} item>
-                  <Typography variant="subtitle2">Ciudad</Typography>
+                  <Typography variant={selectLetter(sizeLetter)}>Ciudad</Typography>
                   <MDInput placeholder="Ciudad" />
                 </Grid>
                 <Grid xs={12} item>
@@ -102,7 +105,13 @@ function Clientes() {
                   <Icon fontSize="small">add</Icon>
                 </Grid>
                 <Grid item xs={11}>
-                  Registrar cliente
+                  <MDTypography
+                    color="white"
+                    fontWeight="bold"
+                    variant={selectLetter(sizeLetter, 0)}
+                  >
+                    Registrar cliente
+                  </MDTypography>
                 </Grid>
               </Grid>
             </MDButton>
@@ -119,7 +128,7 @@ function Clientes() {
                 borderRadius="lg"
                 coloredShadow="info"
               >
-                <MDTypography variant="h6" color="white">
+                <MDTypography variant={selectLetter(sizeLetter, 3)} color="white">
                   Clientes
                 </MDTypography>
               </MDBox>

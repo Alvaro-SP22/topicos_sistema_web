@@ -31,12 +31,15 @@ import {
   setWhiteSidenav,
 } from "context";
 
+import selectLetter from "../../utils/selectLetter";
+
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode } = controller;
   const location = useLocation();
   const collapseName = location.pathname.replace("/", "");
-
+  const [varContext] = useMaterialUIController();
+  const { sizeLetter } = varContext;
   let textColor = "white";
 
   if (transparentSidenav || (whiteSidenav && !darkMode)) {
@@ -98,7 +101,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
           key={key}
           color={textColor}
           display="block"
-          variant="caption"
+          variant={selectLetter(sizeLetter)}
           fontWeight="bold"
           textTransform="uppercase"
           pl={3}
@@ -140,7 +143,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
           onClick={closeSidenav}
           sx={{ cursor: "pointer" }}
         >
-          <MDTypography variant="h6" color="secondary">
+          <MDTypography variant={selectLetter(sizeLetter, 3)} color="secondary">
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </MDTypography>
         </MDBox>
@@ -150,7 +153,11 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             width={!brandName && "100%"}
             sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
           >
-            <MDTypography component="h6" variant="button" fontWeight="medium" color={textColor}>
+            <MDTypography
+              variant={selectLetter(sizeLetter, 3)}
+              fontWeight="medium"
+              color={textColor}
+            >
               {brandName}
             </MDTypography>
           </MDBox>
