@@ -6,9 +6,9 @@ import Icon from "@mui/material/Icon";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import { useMaterialUIController } from "context";
+import TimelineItem from "examples/Timeline/TimelineItem";
 import selectLetter from "../../../../utils/selectLetter";
 // Material Dashboard 2 React example components
-// import TimelineItem from "examples/Timeline/TimelineItem";
 
 function OrdersOverview() {
   const [varContext] = useMaterialUIController();
@@ -33,12 +33,8 @@ function OrdersOverview() {
         </MDBox>
       </MDBox>
       <MDBox p={2}>
-        {/* <TimelineItem
-          color="success"
-          icon="notifications"
-          title="$2400, Design changes"
-          dateTime="22 DEC 7:20 PM"
-        />
+        <TimelineItem title="$2400, Design changes" dateTime="22 DEC 7:20 PM" />
+        {/*
         <TimelineItem
           color="error"
           icon="inventory_2"

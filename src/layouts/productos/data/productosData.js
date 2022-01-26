@@ -21,6 +21,9 @@ import bc002 from "assets/images/BC002.jpeg";
 import Grid from "@mui/material/Grid";
 import MDButton from "components/MDButton";
 import { useMaterialUIController } from "context";
+
+import productoEditar from "assets/images/metaforas/productoEditar.png";
+import productoEliminar from "assets/images/metaforas/productoEliminar.png";
 import selectLetter from "../../../utils/selectLetter";
 
 export default function data() {
@@ -106,24 +109,46 @@ export default function data() {
             color="text"
             fontWeight="medium"
           >
-            23/04/18
+            23/04/2021
           </MDTypography>
         ),
         action: (
           <>
             <Grid container spacing={2}>
               <Grid item>
-                <MDButton color="info">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Editar
-                  </MDTypography>
+                <MDButton color="warning">
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={productoEditar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Editar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
               <Grid item>
                 <MDButton color="error">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Eliminar
-                  </MDTypography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={productoEliminar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Eliminar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
             </Grid>
@@ -146,24 +171,46 @@ export default function data() {
             color="text"
             fontWeight="medium"
           >
-            11/01/19
+            11/01/2022
           </MDTypography>
         ),
         action: (
           <>
             <Grid container spacing={2}>
               <Grid item>
-                <MDButton color="info">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Editar
-                  </MDTypography>
+                <MDButton color="warning">
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={productoEditar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Editar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
               <Grid item>
                 <MDButton color="error">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Eliminar
-                  </MDTypography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={productoEliminar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Eliminar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
             </Grid>
@@ -186,24 +233,46 @@ export default function data() {
             color="text"
             fontWeight="medium"
           >
-            24/12/08
+            24/12/2021
           </MDTypography>
         ),
         action: (
           <>
             <Grid container spacing={2}>
               <Grid item>
-                <MDButton color="info">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Editar
-                  </MDTypography>
+                <MDButton color="warning">
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={productoEditar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Editar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
               <Grid item>
                 <MDButton color="error">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Eliminar
-                  </MDTypography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={productoEliminar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Eliminar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
             </Grid>
@@ -226,24 +295,46 @@ export default function data() {
             color="text"
             fontWeight="medium"
           >
-            04/10/21
+            04/10/2021
           </MDTypography>
         ),
         action: (
           <>
             <Grid container spacing={2}>
               <Grid item>
-                <MDButton color="info">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Editar
-                  </MDTypography>
+                <MDButton color="warning">
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={productoEditar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Editar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
               <Grid item>
                 <MDButton color="error">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Eliminar
-                  </MDTypography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={productoEliminar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Eliminar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
             </Grid>
@@ -266,24 +357,46 @@ export default function data() {
             color="text"
             fontWeight="medium"
           >
-            14/09/20
+            14/09/2021
           </MDTypography>
         ),
         action: (
           <>
             <Grid container spacing={2}>
               <Grid item>
-                <MDButton color="info">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Editar
-                  </MDTypography>
+                <MDButton color="warning">
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={productoEditar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Editar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
               <Grid item>
                 <MDButton color="error">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Eliminar
-                  </MDTypography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={productoEliminar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Eliminar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
             </Grid>

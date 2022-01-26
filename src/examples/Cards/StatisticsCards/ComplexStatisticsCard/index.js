@@ -4,19 +4,21 @@ import PropTypes from "prop-types";
 // @mui material components
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
-import Icon from "@mui/material/Icon";
+// import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 import { useMaterialUIController } from "context";
+import cliente from "assets/images/metaforas/cliente.png";
+import producto from "assets/images/metaforas/producto.png";
+import venta from "assets/images/metaforas/ventas.png";
 import selectLetter from "../../../../utils/selectLetter";
 
 function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
   const [varContext] = useMaterialUIController();
   const { sizeLetter } = varContext;
-
   return (
     <Card>
       <MDBox display="flex" justifyContent="space-between" pt={1} px={2}>
@@ -33,9 +35,10 @@ function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
           height="4rem"
           mt={-3}
         >
-          <Icon fontSize="medium" color="inherit">
-            {icon}
-          </Icon>
+          {icon === 1 && <img width={30} src={cliente} alt="metafora" />}
+          {icon === 2 && <img width={30} src={producto} alt="metafora" />}
+          {icon === 3 && <img width={30} src={venta} alt="metafora" />}
+          {icon === 4 && <>S/</>}
         </MDBox>
         <MDBox textAlign="right" lineHeight={1.25}>
           <MDTypography variant={selectLetter(sizeLetter)} fontWeight="light" color="text">

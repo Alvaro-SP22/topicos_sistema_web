@@ -41,6 +41,10 @@ import SignIn from "layouts/authentication/sign-in";
 // @mui icons
 import Icon from "@mui/material/Icon";
 
+import cliente from "./assets/images/metaforas/cliente.png";
+import producto from "./assets/images/metaforas/producto.png";
+import venta from "./assets/images/metaforas/ventas.png";
+
 const routes = [
   {
     type: "collapse",
@@ -54,7 +58,7 @@ const routes = [
     type: "collapse",
     name: "Clientes",
     key: "clientes",
-    icon: <Icon fontSize="small">person</Icon>,
+    icon: <img width={30} src={cliente} alt="Metafora" />,
     route: "/clientes",
     component: <Clientes />,
   },
@@ -62,7 +66,7 @@ const routes = [
     type: "collapse",
     name: "Productos",
     key: "productos",
-    icon: <Icon fontSize="small">table_view</Icon>,
+    icon: <img width={30} src={producto} alt="Metafora" />,
     route: "/productos",
     component: <Productos />,
   },
@@ -70,7 +74,7 @@ const routes = [
     type: "collapse",
     name: "Ventas",
     key: "ventas",
-    icon: <Icon fontSize="small">store</Icon>,
+    icon: <img width={30} src={venta} alt="Metafora" />,
     route: "/ventas",
     component: <Usuarios />,
   },
