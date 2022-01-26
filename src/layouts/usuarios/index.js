@@ -16,7 +16,7 @@ import DataTable from "examples/Tables/DataTable";
 // import authorsTableData from "layouts/tables/data/authorsTableData";
 import projectsTableData from "layouts/tables/data/projectsTableData";
 import MDButton from "components/MDButton";
-import Icon from "@mui/material/Icon";
+import ventaAgregar from "assets/images/metaforas/ventasAgregar.png";
 import { useMaterialUIController } from "context";
 import selectLetter from "../../utils/selectLetter";
 
@@ -34,9 +34,9 @@ function Usuarios() {
             <MDButton color="primary">
               <Grid container spacing={1}>
                 <Grid item xs={1}>
-                  <Icon fontSize="small">add</Icon>
+                  <img width={30} src={ventaAgregar} alt="metafora" />
                 </Grid>
-                <Grid item xs={11}>
+                <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
                   <MDTypography
                     color="white"
                     fontWeight="bold"

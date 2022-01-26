@@ -12,7 +12,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import Icon from "@mui/material/Icon";
-
+import Grid from "@mui/material/Grid";
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDInput from "components/MDInput";
@@ -120,10 +120,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
     >
       <Toolbar sx={(theme) => navbarContainer(theme)}>
         <MDBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
-          <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
-        </MDBox>
-        {isMini ? null : (
-          <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
+          {isMini ? null : (
             <IconButton
               size="small"
               disableRipple
@@ -135,26 +132,34 @@ function DashboardNavbar({ absolute, light, isMini }) {
                 {miniSidenav ? "menu_open" : "menu"}
               </Icon>
             </IconButton>
+          )}
+          <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
+        </MDBox>
+        {isMini ? null : (
+          <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
             <IconButton
+              fontSize="small"
               onClick={() => {
                 setSizeLetter(dispatch, "small");
               }}
             >
-              a
+              <Grid sx={{ fontSize: "20px" }}>A</Grid>
             </IconButton>
             <IconButton
+              fontSize="medium"
               onClick={() => {
                 setSizeLetter(dispatch, "medium");
               }}
             >
-              A
+              <Grid sx={{ fontSize: "30px" }}>A</Grid>
             </IconButton>
             <IconButton
+              fontSize="big"
               onClick={() => {
                 setSizeLetter(dispatch, "big");
               }}
             >
-              A
+              <Grid sx={{ fontSize: "40px" }}>A</Grid>
             </IconButton>
             <MDBox pr={1}>
               <MDInput label="Buscar..." />

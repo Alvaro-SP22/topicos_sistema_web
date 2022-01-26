@@ -21,6 +21,8 @@ import team2 from "assets/images/team-2.jpg";
 // import logoInvesion from "assets/images/small-logos/logo-invision.svg";
 
 import { useMaterialUIController } from "context";
+import ventasEditar from "assets/images/metaforas/ventasEditar.png";
+import ventasEliminar from "assets/images/metaforas/ventasEliminar.png";
 import selectLetter from "../../../utils/selectLetter";
 
 export default function data() {
@@ -124,17 +126,39 @@ export default function data() {
           <>
             <Grid container spacing={2}>
               <Grid item>
-                <MDButton color="info">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Editar
-                  </MDTypography>
+                <MDButton color="warning">
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={ventasEditar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Editar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
               <Grid item>
                 <MDButton color="error">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Eliminar
-                  </MDTypography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={ventasEliminar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Eliminar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
             </Grid>
@@ -170,17 +194,39 @@ export default function data() {
           <>
             <Grid container spacing={2}>
               <Grid item>
-                <MDButton color="info">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Editar
-                  </MDTypography>
+                <MDButton color="warning">
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={ventasEditar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Editar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
               <Grid item>
                 <MDButton color="error">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Eliminar
-                  </MDTypography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={ventasEliminar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Eliminar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
             </Grid>

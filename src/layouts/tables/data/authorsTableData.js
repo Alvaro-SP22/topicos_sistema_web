@@ -16,10 +16,13 @@ import Grid from "@mui/material/Grid";
 // import logoJira from "assets/images/small-logos/logo-jira.svg";
 // import logoInvesion from "assets/images/small-logos/logo-invision.svg";
 import team2 from "assets/images/team-2.jpg";
-import team3 from "assets/images/team-3.jpg";
+// import team3 from "assets/images/team-3.jpg";
 // import team4 from "assets/images/team-4.jpg";
 import { useMaterialUIController } from "context";
 import selectLetter from "../../../utils/selectLetter";
+
+import clienteEditar from "../../../assets/images/metaforas/clienteEditar.png";
+import clienteEliminar from "../../../assets/images/metaforas/clienteEliminar.png";
 
 export default function data() {
   const [varContext] = useMaterialUIController();
@@ -41,7 +44,7 @@ export default function data() {
       {
         Header: (
           <MDTypography variant={selectLetter(sizeLetter, 3)} color="black">
-            Código
+            Datos
           </MDTypography>
         ),
         accessor: "author",
@@ -92,56 +95,39 @@ export default function data() {
           <>
             <Grid container spacing={2}>
               <Grid item>
-                <MDButton color="info">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Editar
-                  </MDTypography>
+                <MDButton color="warning">
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={clienteEditar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Editar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
               <Grid item>
                 <MDButton color="error">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Eliminar
-                  </MDTypography>
-                </MDButton>
-              </Grid>
-            </Grid>
-          </>
-        ),
-      },
-      {
-        author: <Author image={team3} name="Carla Zapata" email="czapata@unitru.edu.pe" />,
-        estado: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="Moroso" color="dark" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography
-            component="a"
-            href="#"
-            variant={selectLetter(sizeLetter)}
-            color="text"
-            fontWeight="medium"
-          >
-            11/01/19
-          </MDTypography>
-        ),
-        action: (
-          <>
-            <Grid container spacing={2}>
-              <Grid item>
-                <MDButton color="info">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Editar
-                  </MDTypography>
-                </MDButton>
-              </Grid>
-              <Grid item>
-                <MDButton color="error">
-                  <MDTypography color="white" fontWeight="bold" variant={selectLetter(sizeLetter)}>
-                    Eliminar
-                  </MDTypography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={1}>
+                      <img width={30} src={clienteEliminar} alt="metafora" />
+                    </Grid>
+                    <Grid item xs={11} sx={{ paddingLeft: "20px !important" }}>
+                      <MDTypography
+                        color="white"
+                        fontWeight="bold"
+                        variant={selectLetter(sizeLetter)}
+                      >
+                        Eliminar
+                      </MDTypography>
+                    </Grid>
+                  </Grid>
                 </MDButton>
               </Grid>
             </Grid>
